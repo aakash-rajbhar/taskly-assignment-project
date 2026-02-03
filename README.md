@@ -1,6 +1,6 @@
 # Task Management Application
 
-A full-stack web application with authentication, user dashboard, and task CRUD functionality built with modern technologies.
+A full-stack web application with authentication, user dashboard, and task CRUD functionality to manage tasks built with modern technologies.
 
 ## 📋 Tech Stack
 
@@ -251,71 +251,6 @@ assignment-project/
 - **Update Task**: Title (1-200 chars) or completed boolean
 - **Update Profile**: Name (2-50 chars) or valid email
 
-## 🏗️ Scaling for Production
-
-### Deployment
-- **Frontend**: Deploy to Vercel, Netlify, or AWS Amplify with environment-specific configs
-- **Backend**: Deploy to AWS EC2, DigitalOcean, or Heroku with PM2 for process management
-- **Database**: Use MongoDB Atlas with replica sets for high availability
-
-### CORS Configuration
-- Update CORS whitelist to include production frontend URL
-- Implement environment-based CORS origins
-- Set `secure: true` for cookies in production (HTTPS only)
-
-### Environment Management
-- Use environment-specific .env files (.env.production, .env.staging)
-- Store secrets in AWS Secrets Manager, HashiCorp Vault, or similar
-- Never commit .env files to version control
-
-### Database Optimization
-- Add indexes on frequently queried fields (userId, email)
-- Implement connection pooling
-- Use MongoDB aggregation pipelines for complex queries
-- Consider read replicas for scaling reads
-
-### Caching
-- Implement Redis for session storage and frequently accessed data
-- Cache user profiles and task lists with TTL
-- Use CDN for static assets (Next.js images, CSS, JS)
-
-### Security Enhancements
-- Implement rate limiting (express-rate-limit) on auth endpoints
-- Add refresh tokens for longer sessions
-- Implement CSRF protection
-- Add helmet.js for security headers
-- Enable HTTPS/TLS everywhere
-- Implement input sanitization against XSS/injection attacks
-
-### Monitoring & Logging
-- Implement structured logging (Winston, Pino)
-- Set up error tracking (Sentry, Rollbar)
-- Monitor API performance (New Relic, DataDog)
-- Set up uptime monitoring (UptimeRobot, Pingdom)
-- Implement distributed tracing for microservices
-
-### Performance
-- Implement pagination for task lists
-- Add database query optimization
-- Use Next.js ISR (Incremental Static Regeneration) where applicable
-- Implement lazy loading for components
-- Optimize images with Next.js Image component
-- Use compression middleware (gzip/brotli)
-
-### Scalability Patterns
-- Implement load balancing (NGINX, AWS ALB)
-- Use horizontal scaling with container orchestration (Kubernetes, Docker Swarm)
-- Separate read/write databases
-- Implement message queues (RabbitMQ, AWS SQS) for async tasks
-- Use microservices architecture for independent scaling
-- Implement API Gateway for request routing and throttling
-
-### CI/CD Pipeline
-- Automated testing (Jest, Cypress)
-- Automated builds on git push
-- Staging environment for pre-production testing
-- Blue-green or canary deployments
-- Automated rollback on failures
 
 ## 📝 Notes
 
@@ -324,11 +259,3 @@ assignment-project/
 - Protected routes automatically redirect to login if unauthenticated
 - Tasks are user-scoped and filtered by userId
 - Frontend uses Next.js 13+ App Router with client components
-
-## 🤝 Contributing
-
-This is an assignment project. For production use, consider implementing the scaling recommendations above.
-
-## 📄 License
-
-MIT
